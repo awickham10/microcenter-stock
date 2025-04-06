@@ -1,0 +1,47 @@
+[MASTER]
+# Add the project directory to Python path
+ignore=CVS,.git,__pycache__,build,dist
+
+# Use multiple processes to speed up Pylint
+jobs=0
+
+# List of plugins to load
+load-plugins=
+
+# Allow loading modules/packages from top level directory
+init-hook='import sys; sys.path.append(".")'
+
+[MESSAGES CONTROL]
+# Disable specific warnings
+disable=C0111,  # missing-docstring
+        C0103,  # invalid-name
+        C0303,  # trailing-whitespace
+        W0511,  # fixme
+        R0903,  # too-few-public-methods
+        R0913,  # too-many-arguments
+        R0914   # too-many-locals
+
+[FORMAT]
+# Maximum number of characters on a single line
+max-line-length=120
+
+# Maximum number of lines in a module
+max-module-lines=1000
+
+[BASIC]
+# Regular expression which should only match function or class names
+function-rgx=[a-z_][a-z0-9_]{2,50}$
+class-rgx=[A-Z_][a-zA-Z0-9_]+$
+
+# Good variable names
+good-names=i,j,k,ex,Run,_,id,df
+
+[REPORTS]
+# Set the output format
+output-format=text
+
+# Include a brief explanation of each error
+msg-template={path}:{line}: [{msg_id}({symbol}), {obj}] {msg}
+
+# Files or directories to be skipped. They should be base names, not paths
+ignore-patterns= 
